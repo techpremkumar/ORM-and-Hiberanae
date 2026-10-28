@@ -26,6 +26,10 @@ public class Customer {
         this.email = email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
@@ -37,4 +41,5 @@ public class Customer {
     public String getEmail() {
         return email;
     }
+
 }

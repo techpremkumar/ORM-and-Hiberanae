@@ -16,11 +16,10 @@ public class CustomerInsertTest {
 
                 Transaction transaction = session.beginTransaction();
 
-                Customer customer = new Customer(
-                        101,
-                        "Arun",
-                        "arun@example.com"
-                );
+                Customer customer =
+                        new Customer(101, "Arun", "arun@example.com");
+
+                session.persist(customer);
 
                 session.persist(customer);
 
