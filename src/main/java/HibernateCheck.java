@@ -1,4 +1,4 @@
-
+package org.example;
 import org.hibernate.Version;
 
 public class HibernateCheck {

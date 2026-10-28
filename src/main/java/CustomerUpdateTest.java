@@ -1,4 +1,7 @@
 
+import org.example.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

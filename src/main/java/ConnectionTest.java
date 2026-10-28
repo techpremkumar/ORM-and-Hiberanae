@@ -1,7 +1,8 @@
+package org.example;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import org.example.HibernateUtil;
 public class ConnectionTest {
 
     public static void main(String[] args) {
