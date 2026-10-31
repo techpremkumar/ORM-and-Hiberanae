@@ -1,9 +1,6 @@
 package org.example;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +11,10 @@ public class Customer {
     @Id
     private int id;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(
+            mappedBy = "customer",
+            fetch = FetchType.LAZY
+    )
     private List<Order> orders = new ArrayList<>();
 
     @Column(name = "customer_name")
@@ -23,8 +23,7 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    public Customer() {
-    }
+    public Customer() {}
 
     public Customer(int id, String name, String email) {
         this.id = id;
@@ -48,4 +47,7 @@ public class Customer {
         return email;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
 }
