@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-<hibernate-configuration>
-    <session-factory>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
 
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/orm_practice</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">NewPass@123</property>
+    <persistence-unit name="orm-practice">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
+        <class>org.example.Customer</class>
+        <class>org.example.Order</class>
 
-        <mapping class="org.example.Customer"/>
-        <mapping class="org.example.Order"/>
-        <mapping class="EntityRelationship.User"/>
-        <mapping class="EntityRelationship.UserProfile"/>
-        <mapping class="ManyToMany.Student"/>
-        <mapping class="ManyToMany.Course"/>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
 
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/orm_practice"/>
 
-    </session-factory>
-</hibernate-configuration>
+            <property name="jakarta.persistence.jdbc.user"
+                      value="root"/>
+
+            <property name="jakarta.persistence.jdbc.password"
+                      value="NewPass@123"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
