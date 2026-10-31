@@ -16,11 +16,14 @@ public class Customer {
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.REMOVE,
-                    CascadeType.MERGE
-            }
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH,
+                    CascadeType.DETACH,
+
+            },
+            fetch = FetchType.LAZY
     )
     private List<Order> orders = new ArrayList<>();
-
 
 
     @Column(name = "customer_name")
