@@ -13,14 +13,7 @@ public class Customer {
 
     @OneToMany(
             mappedBy = "customer",
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.REMOVE,
-                    CascadeType.MERGE,
-                    CascadeType.REFRESH,
-                    CascadeType.DETACH,
-
-            },
+            cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     private List<Order> orders = new ArrayList<>();

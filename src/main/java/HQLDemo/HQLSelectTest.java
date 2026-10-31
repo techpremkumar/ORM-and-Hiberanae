@@ -12,10 +12,10 @@ public class HQLSelectTest {
 
         try (Session session =
                      HibernateUtil.getSessionFactory().openSession()) {
-
             List<Customer> customers =
                     session.createQuery(
-                            "FROM Customer", Customer.class
+                            "FROM Customer c WHERE c.id = 201",
+                            Customer.class
                     ).getResultList();
 
             for (Customer customer : customers) {
