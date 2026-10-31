@@ -1,3 +1,4 @@
+import org.example.Customer;
 
 public class Main {
 

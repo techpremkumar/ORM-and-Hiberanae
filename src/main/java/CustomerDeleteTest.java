@@ -1,4 +1,4 @@
-
+import org.example.Customer;
 import org.example.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
