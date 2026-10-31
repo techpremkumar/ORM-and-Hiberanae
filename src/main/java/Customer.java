@@ -1,5 +1,5 @@
 package org.example;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,13 @@ public class Customer {
 
     @OneToMany(
             mappedBy = "customer",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.PERSIST
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.REMOVE
+            }
     )
     private List<Order> orders = new ArrayList<>();
+
 
 
     @Column(name = "customer_name")
