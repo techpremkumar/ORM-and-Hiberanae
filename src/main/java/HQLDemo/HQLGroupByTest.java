@@ -16,7 +16,8 @@ public class HQLGroupByTest {
                     "SELECT c.name, COUNT(o) " +
                             "FROM Customer c " +
                             "JOIN c.orders o " +
-                            "GROUP BY c.id, c.name",
+                            "GROUP BY c.id, c.name " +
+                            "HAVING COUNT(o) > 1",
                     Object[].class
             ).getResultList();
 
