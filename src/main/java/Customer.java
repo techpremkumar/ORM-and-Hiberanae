@@ -15,7 +15,8 @@ public class Customer {
             mappedBy = "customer",
             cascade = {
                     CascadeType.PERSIST,
-                    CascadeType.REMOVE
+                    CascadeType.REMOVE,
+                    CascadeType.MERGE
             }
     )
     private List<Order> orders = new ArrayList<>();
