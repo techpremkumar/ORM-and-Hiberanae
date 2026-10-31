@@ -14,7 +14,7 @@ public class HQLSelectTest {
                      HibernateUtil.getSessionFactory().openSession()) {
             List<Customer> customers =
                     session.createQuery(
-                            "FROM Customer c WHERE c.id = 201",
+                            "FROM Customer c ORDER BY c.id DESC",
                             Customer.class
                     ).getResultList();
 
