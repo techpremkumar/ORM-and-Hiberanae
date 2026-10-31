@@ -14,10 +14,12 @@ public class HQLOrderByPaginationTest {
                      HibernateUtil.getSessionFactory().openSession()) {
 
             List<Customer> customers = session.createQuery(
-                    "FROM Customer c ORDER BY c.name ASC",
-                    Customer.class
-            ).getResultList();
-
+                            "FROM Customer c ORDER BY c.id ASC",
+                            Customer.class
+                    )
+                    .setFirstResult(0)
+                    .setMaxResults(2)
+                    .getResultList();
             for (Customer customer : customers) {
                 System.out.println(
                         customer.getId() + " " + customer.getName()
