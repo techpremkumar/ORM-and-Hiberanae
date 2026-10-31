@@ -13,9 +13,11 @@ public class Customer {
 
     @OneToMany(
             mappedBy = "customer",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.PERSIST
     )
     private List<Order> orders = new ArrayList<>();
+
 
     @Column(name = "customer_name")
     private String name;
@@ -49,5 +51,8 @@ public class Customer {
 
     public List<Order> getOrders() {
         return orders;
+    }
+    public void addOrder(Order order) {
+        orders.add(order);
     }
 }
