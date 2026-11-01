@@ -13,6 +13,11 @@
         <class>InheritanceDemo.Employee</class>
         <class>InheritanceDemo.FullTimeEmployee</class>
         <class>InheritanceDemo.ContractEmployee</class>
+        <class>EmbeddedDemo.Address</class>
+        <class>EmbeddedDemo.Customer</class>
+
+
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver"
@@ -29,10 +34,20 @@
 
             <property name="jakarta.persistence.jdbc.password"
                       value="NewPass@123"/>
+            <property name="hibernate.cache.use_second_level_cache"
+                      value="true"/>
+
+            <property name="hibernate.cache.region.factory_class"
+                      value="jcache"/>
+
+
+            <property name="hibernate.javax.cache.provider"
+                      value="org.ehcache.jsr107.EhcacheCachingProvider"/>
 
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
+
 
 
         </properties>

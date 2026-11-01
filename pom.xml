@@ -31,6 +31,7 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 <build>
@@ -103,6 +104,18 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <kotlin.version>2.3.10</kotlin.version>
+
+    <property name="hibernate.cache.use_second_level_cache"
+              value="true"/>
+
+    <property name="hibernate.cache.region.factory_class"
+              value="jcache"/>
+
+    <property name="hibernate.javax.cache.provider"
+              value="org.ehcache.jsr107.EhcacheCachingProvider"/>
+
+    <property name="hibernate.generate_statistics"
+              value="true"/>
     </properties>
 
 </project>
