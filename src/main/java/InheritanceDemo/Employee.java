@@ -4,7 +4,7 @@ package InheritanceDemo;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "employee_type")
 public class Employee {
 
