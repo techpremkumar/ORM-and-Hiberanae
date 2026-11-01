@@ -10,10 +10,17 @@
 
         <class>org.example.Customer</class>
         <class>org.example.Order</class>
+        <class>InheritanceDemo.Employee</class>
+        <class>InheritanceDemo.FullTimeEmployee</class>
+        <class>InheritanceDemo.ContractEmployee</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver"
                       value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.schema-generation.database.action"
+                      value="update"/>
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
 
             <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/orm_practice"/>
@@ -26,6 +33,7 @@
 
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
+
         </properties>
 
     </persistence-unit>
