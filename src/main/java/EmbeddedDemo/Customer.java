@@ -1,9 +1,16 @@
+
 package EmbeddedDemo;
 
 import jakarta.persistence.*;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity(name = "EmbeddedCustomer")
 @Table(name = "embedded_customers")
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+
 public class Customer {
 
     @Id
@@ -36,10 +43,28 @@ public class Customer {
 
     public Customer() {}
 
-    public Customer(String name, Address currentAddress,
+    public Customer(String name,
+                    Address currentAddress,
                     Address permanentAddress) {
+
         this.name = name;
         this.currentAddress = currentAddress;
         this.permanentAddress = permanentAddress;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Address getCurrentAddress() {
+        return currentAddress;
+    }
+
+    public Address getPermanentAddress() {
+        return permanentAddress;
     }
 }
