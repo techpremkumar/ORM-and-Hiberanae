@@ -4,12 +4,11 @@ package InheritanceDemo;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "employee_type")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
@@ -22,6 +21,7 @@ public class Employee {
         this.email = email;
     }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
+    public Long getId() {
+        return id;
+    }
 }
