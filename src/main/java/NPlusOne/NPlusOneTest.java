@@ -20,7 +20,7 @@ public class NPlusOneTest {
 
             for (Customer customer : customers) {
 
-                System.out.println(
+                System.out.prinr(
                         customer.getName() +
                                 " -> " +
                                 customer.getOrders().size() +
