@@ -12,6 +12,10 @@
         <class>org.example.Customer</class>
         <class>org.example.Order</class>
         <class>EmbeddedDemo.Customer</class>
+        <class>LockingDemo.Product</class>
+        <class>BatchDemo.BatchProduct</class>
+
+
 
         <properties>
 
@@ -33,6 +37,9 @@
 
             <property name="hibernate.cache.use_second_level_cache"
                       value="true"/>
+            <property name="hibernate.jdbc.batch_size" value="25"/>
+            <property name="hibernate.order_inserts" value="true"/>
+            <property name="hibernate.order_updates" value="true"/>
 
             <property name="hibernate.cache.region.factory_class"
                       value="org.hibernate.cache.jcache.internal.JCacheRegionFactory"/>
@@ -42,6 +49,7 @@
 
             <property name="hibernate.generate_statistics"
                       value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
 
         </properties>
 
